@@ -7,11 +7,15 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.*
+import android.widget.TextView
+
 
 class EmployeesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,36 +25,24 @@ class EmployeesActivity : AppCompatActivity() {
 //        val textView: TextView = findViewById(R.id.name_text)
 //        textView.text = Globals.restAddress
         val button: Button = findViewById(R.id.refresh)
+        var tableLayout: TableLayout = findViewById(R.id.table_base);
+
+        var tableRow = LayoutInflater.from(this).inflate(R.layout.table_item, null, false)
+//        var firstName: TextView = tableRow.findViewById(R.id.first_name)
+
         button.setOnClickListener() {
-            addRow(arrayOf("dsa", "asdfa", "dfsa", "asdf"))
+            addRow(tableLayout, arrayOf("dsa", "asdfa", "dfsa", "asdf"))
         }
 
     }
 
-    private fun addRow(columns: Array<String>) {
-        var row: TableRow = TableRow(this).apply {
-            setBackgroundColor(0xF0F7F7)
-            setPadding(5.dp, 5.dp, 5.dp, 5.dp)
-            for (column in columns) {
-                addView(TextView(this@EmployeesActivity).apply {
-                    weightSum = 1f
-                    width = WRAP_CONTENT
-                    height = WRAP_CONTENT
-                    text = column
-                })
-            }
-        }
-        val layout: TableLayout = findViewById(R.id.table_base)
-        layout.post {
-            kotlin.run {
-                layout.addView(row)
-                layout.invalidate()
-                Log.d("asd", "dsf")
-
-            }
-        }
-
-
+    private fun addRow(base: TableLayout, columns: Array<String>) {
+        var tableRow = LayoutInflater.from(this).inflate(R.layout.table_item, null, false)
+        var firstName: TextView = tableRow.findViewById(R.id.first_name)
+        var lastName: TextView = tableRow.findViewById(R.id.last_name)
+        firstName.text = columns[1]
+        lastName.text = columns[2]
+        base.addView(tableRow)
     }
 
     //    override fun on() {
