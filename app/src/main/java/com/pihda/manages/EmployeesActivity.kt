@@ -23,7 +23,6 @@ class EmployeesActivity : AppCompatActivity() {
         val button: Button = findViewById(R.id.refresh)
         val tableLayout: TableLayout = findViewById(R.id.table_base);
 
-        var tableRow = LayoutInflater.from(this).inflate(R.layout.table_item, null, false)
         val retrofit = Retrofit.Builder()
             .baseUrl(Globals.restAddress + "/api/")
             .addConverterFactory(JacksonConverterFactory.create())
@@ -32,7 +31,12 @@ class EmployeesActivity : AppCompatActivity() {
         val service = retrofit.create(EmployeeService::class.java)
 
         button.setOnClickListener() {
+            tableLayout.removeAllViews()
             val call = service.getEmployees()
+
+            tableLayout.addView(LayoutInflater.from(this).inflate(R.layout.table_title, null, false))
+            tableLayout.addView(LayoutInflater.from(this).inflate(R.layout.table_header, null, false))
+
             call.enqueue(object : Callback<List<Employee>> {
                 override fun onResponse(call: Call<List<Employee>>, response: Response<List<Employee>>) {
                     val employees = response.body()
