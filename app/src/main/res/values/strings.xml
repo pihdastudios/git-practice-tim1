@@ -3,4 +3,5 @@
     <string name="placeholder_address">http://10.0.2.2:8080</string>
     <string name="next">Next</string>
     <string name="server_address">Server Address</string>
+    <string name="table_title">Employee Database:</string>
 </resources>

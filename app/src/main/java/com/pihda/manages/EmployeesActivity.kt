@@ -1,12 +1,11 @@
 package com.pihda.manages
 
-import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.widget.*
+import android.widget.Button
+import android.widget.TableLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.*
 import com.pihda.manages.entity.Employee
 import com.pihda.manages.service.EmployeeService
 import retrofit2.Call
@@ -21,7 +20,7 @@ class EmployeesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_employees)
         val button: Button = findViewById(R.id.refresh)
-        val tableLayout: TableLayout = findViewById(R.id.table_base);
+        val tableLayout: TableLayout = findViewById(R.id.table_base)
 
         val retrofit = Retrofit.Builder()
             .baseUrl(Globals.restAddress + "/api/")
@@ -30,7 +29,7 @@ class EmployeesActivity : AppCompatActivity() {
 
         val service = retrofit.create(EmployeeService::class.java)
 
-        button.setOnClickListener() {
+        button.setOnClickListener {
             tableLayout.removeAllViews()
             val call = service.getEmployees()
 
@@ -68,11 +67,4 @@ class EmployeesActivity : AppCompatActivity() {
         role.text = columns.role.toString()
         base.addView(tableRow)
     }
-
-
-    val Int.dp: Int
-        get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
-
-    val Float.dp: Int
-        get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
 }
