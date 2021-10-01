@@ -1,6 +1,6 @@
-package com.pihda.manages.Model
+package com.pihda.manages.entity
 import com.fasterxml.jackson.annotation.JsonProperty
-class EmployeeModel {
+class Employee {
     enum class Role {
         MANAGER, JANITOR, OFFICE_BOY, SECRETARY
     }
