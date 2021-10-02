@@ -4,4 +4,9 @@
     <string name="next">Next</string>
     <string name="server_address">Server Address</string>
     <string name="table_title">Employee Database:</string>
+    <string name="current_role">JANITOR</string>
+    <string name="save">SAVE</string>
+    <string name="delete">DELETE</string>
+    <string name="first_name">John</string>
+    <string name="last_name">Appleseed</string>
 </resources>
