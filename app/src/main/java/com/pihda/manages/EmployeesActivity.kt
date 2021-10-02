@@ -1,7 +1,6 @@
 package com.pihda.manages
 
 import android.graphics.Color
-import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,8 +19,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 class EmployeesActivity : AppCompatActivity() {
     lateinit var tableLayout: TableLayout
     private lateinit var service: EmployeeService
-    //    lateinit var selectedRow: View
-    lateinit var selectedRow: SelectedRow
+    private lateinit var selectedRow: SelectedRow
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_employees)
