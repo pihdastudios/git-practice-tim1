@@ -1,5 +1,6 @@
 package com.pihda.manages
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -94,4 +95,9 @@ class EmployeesActivity : AppCompatActivity() {
     }
 
     data class SelectedRow(var view: View?, var selected: Boolean)
+
+    fun addButtonHandler(view: android.view.View) {
+        val intent = Intent(this, EditActivity::class.java)
+        startActivity(intent)
+    }
 }

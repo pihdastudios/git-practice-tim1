@@ -9,4 +9,14 @@
     <string name="delete">DELETE</string>
     <string name="first_name">John</string>
     <string name="last_name">Appleseed</string>
+    <string name="edit">EDIT</string>
+    <string name="back">Back</string>
+
+    <string-array name="roles_array">
+        <item>MANAGER</item>
+        <item>JANITOR</item>
+        <item>OFFICE_BOY</item>
+        <item>SECRETARY</item>
+    </string-array>
+
 </resources>
