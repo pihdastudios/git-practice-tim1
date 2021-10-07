@@ -12,7 +12,7 @@ interface EmployeeService {
     fun getEmployees(): Call<List<Employee>>
 
     @POST("employees")
-    fun createEmployee(@Body employee: Employee): Call<List<Employee>>
+    fun createEmployee(@Body employee: Employee): Call<Employee>
 
     @DELETE("employees/{id}")
     fun deleteEmployee(@Path("id") id: String): Call<Employee>
