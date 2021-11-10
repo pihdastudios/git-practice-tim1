@@ -1,5 +1,9 @@
 package com.pihda.manages.entity
-import com.fasterxml.jackson.annotation.JsonProperty
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "employees")
 class Employee {
     enum class Role(val value: Int) {
         MANAGER(0), JANITOR(1), OFFICE_BOY(2), SECRETARY(3);
@@ -9,16 +13,16 @@ class Employee {
         }
     }
 
-    @JsonProperty("id")
+    @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 
-    @JsonProperty("firstName")
+    @ColumnInfo(name = "first_name")
     lateinit var firstName: String
 
-    @JsonProperty("lastName")
+    @ColumnInfo(name = "last_name")
     lateinit var lastName: String
 
-    @JsonProperty("role")
+    @ColumnInfo(name = "role")
     lateinit var role: Role
 
 }
