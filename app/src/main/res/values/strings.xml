@@ -1,22 +1,9 @@
 <resources>
-    <string name="app_name">Manages</string>
-    <string name="placeholder_address">http://10.0.2.2:8080</string>
-    <string name="next">Next</string>
-    <string name="server_address">Server Address</string>
-    <string name="table_title">Employee Database:</string>
-    <string name="current_role">JANITOR</string>
-    <string name="save">SAVE</string>
-    <string name="delete">DELETE</string>
-    <string name="first_name">John</string>
-    <string name="last_name">Appleseed</string>
-    <string name="edit">EDIT</string>
-    <string name="back">Back</string>
+    <string name="app_name">RoomLiveData</string>
 
-    <string-array name="roles_array">
-        <item>MANAGER</item>
-        <item>JANITOR</item>
-        <item>OFFICE_BOY</item>
-        <item>SECRETARY</item>
-    </string-array>
-
+    <string name="hint_word">Palabras…</string>
+    <string name="button_save">Guardar</string>
+    <string name="empty_not_saved">Palabra no guardada</string>
+    <string name="palabra">Palabra</string>
+    <string name="description">description</string>
 </resources>
